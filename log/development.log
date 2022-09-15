@@ -1,0 +1,121 @@
+Started GET "/" for 127.0.0.1 at 2022-09-14 20:44:17 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 15.4ms | Allocations: 680)
+Completed 200 OK in 161ms (Views: 50.8ms | ActiveRecord: 0.0ms | Allocations: 5620)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-14 20:45:57 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.8ms | Allocations: 551)
+Completed 200 OK in 83ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 4040)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-14 20:46:36 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.3ms | Allocations: 300)
+Completed 200 OK in 14ms (Views: 3.2ms | Allocations: 1021)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-14 20:48:36 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 3651)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 3749)
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 1.2ms | Allocations: 8125)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: articles):
+    1: <h1>Articles</h1>
+    2: 
+    3: <ul>
+    4:   <% @articles.each do |article| %>
+    5:     <li>
+    6:       <%= link_to article.title, article %>
+    7:     </li>
+  
+app/views/articles/index.html.erb:4
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArticles (20220915005017)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220915005017"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (8.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-15 00:50:55.485612"], ["updated_at", "2022-09-15 00:50:55.485612"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-09-14 20:51:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 855)
+  Rendered layout layouts/application.html.erb (Duration: 261.7ms | Allocations: 10943)
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 0.5ms | Allocations: 12324)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Create (11.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hello Rails"], ["body", "I am on rails!"], ["created_at", "2022-09-15 00:53:47.911315"], ["updated_at", "2022-09-15 00:53:47.911315"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+Started GET "/" for 127.0.0.1 at 2022-09-14 20:54:07 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 221.4ms | Allocations: 18010)
+  Rendered layout layouts/application.html.erb (Duration: 243.6ms | Allocations: 24451)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 1.6ms | Allocations: 24771)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for 127.0.0.1 at 2022-09-14 20:54:10 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 670)
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 6947)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.3ms | Allocations: 7246)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for 127.0.0.1 at 2022-09-14 20:56:08 -0400
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 628)
+  Rendered layout layouts/application.html.erb (Duration: 338.9ms | Allocations: 21072)
+Completed 500 Internal Server Error in 350ms (ActiveRecord: 0.3ms | Allocations: 21346)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
